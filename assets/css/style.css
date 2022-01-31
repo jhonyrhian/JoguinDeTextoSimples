@@ -14,22 +14,21 @@ body{
     line-height: 26px;
 }
 
+span{
+  color: #ffff00;
+}
+
 #msg{
   color: red
 }
 
-div{
+#conteudo div{
   margin-bottom: 10px;
 }
 
-#conteudo>:first-child{
-    width: 194px;
+input[type="submit"]{
+  display: none;
 }
-
-#conteudo>:nth-child(2){
-  width: 147px;
-}
-
 
 input[type="radio"] {
     opacity: 0;
@@ -41,12 +40,16 @@ label {
     margin-right: 10px;
     display: inline-block;
     background-color: transparent;
-    padding: 10px 20px;
+    padding: 1em 3em;
     font-size: 16px;
     border: 1px solid var(--secundaria);
   }
+
+  #ok + label{
+    margin-top: 20px;
+  }
   
-label:hover {
+label:hover, input[type="submit"]:hover {
     cursor: pointer;
     background-color: #a7a7a7;
     transition: 0.4s;
@@ -65,19 +68,53 @@ input[type="radio"]:checked + label {
   #inputs{
       display: flex;
   }
-input[type="text"]{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: inline-block;
-    position: relative;
-    background: transparent;
-    border: 1px solid var(--secundaria);
-    padding: 5px;
-    font-family: 'Press Start 2P', cursive;
-    height: 24px;
-    width: 200px;
-    color: var(--secundaria);
+input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--secundaria);
+  font-family: 'Press Start 2P', cursive;
+  height: 24px;
+  width: 200px;
+  color: var(--secundaria);
+}
+
+button{
+  margin-right: 10px;
+  padding: 1em 2em;
+  background: transparent;
+  border: 1px solid var(--secundaria); 
+  color: var(--secundaria);
+  font-family: 'Press Start 2P', cursive;
+  transition: 0.4s;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+#simbutton{
+  color: #00a700;
+  border-color: #00a700;
+}
+
+#simbutton:hover{
+  color: var(--secundaria);
+  background: #00a700;
+  border-color: var(--secundaria);
+}
+
+#naobutton{
+  color: red;
+  border-color: red;
+}
+#naobutton:hover{
+  color: var(--secundaria);
+  background: red;
+  border-color: var(--secundaria);
 }
 
 input[type="text"]:focus{
@@ -87,37 +124,12 @@ input[type="text"]:focus{
 p {
     padding: 0;
     overflow: hidden;
-    border-right: .15em solid var(--secundaria);
     white-space: nowrap;
     margin: 0 10px 0 10px;
-    letter-spacing: .15em;
-    animation: 
-    typing 2.5s steps(20, end),
-    blink-caret .75s step-end infinite;
+    /* letter-spacing: .15em; */
   }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--secundaria); }
-  }
-
   @keyframes shake{
-    0%{
-      transform: translateX(0)
-    }
-    25%{
-      transform: translateX(25px);
-    }
-      
-    50%{
-      transform: translateX(-25px);
-    }
-    100%{
-      transform: translateX(0px);
-    }
-  }
+    0%{transform: translateX(0)}
+    25%{transform: translateX(25px);}
+    50%{transform: translateX(-25px);}
+    100%{transform: translateX(0px);}}
