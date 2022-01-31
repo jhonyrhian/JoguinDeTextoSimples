@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/remove_padroes.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/script/script.js"></script>
+
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Contos de Jericoacoara</title>
+</head>
+<body>
+    <div id="conteudo">
+        <div>
+            <p>Seu nome é</p>
+            <input type="text" id="nome"></input><br>
+        </div>
+
+        <div>
+            <p>Racas disponíveis:</p>
+            <div id="inputs">
+                <input type="radio" id="humano" name="raca" value = 0 ></input>
+                <label for="humano">Humano</label>
+                <input type="radio" id="ciclope" name="raca" value = 1></input>
+                <label for="ciclope">Ciclope</label>
+                <input type="radio" id="elfo" name="raca" value= 2></input>
+                <label for="elfo">Elfo</label>
+            </div>
+            <p>Qual é a sua escolha?</p>
+        </div>
+
+        <div>
+            <input type="submit" id="ok" onclick="saveName()"></input>
+        </div>
+    </div>
+</body>
+</html>
