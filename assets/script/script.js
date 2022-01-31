@@ -1,6 +1,6 @@
 var reinos = [
-    {"raca": "humano", "reino":["Vermênia", "Estátira", "Divinópolis", "Anauroch", "Gashbad"],},
-    {"raca": "ciclope", "reino":["Glúkdra", "Mashshag", "Tandra", "Ugarg", "Warkatopia"],},
+    {"raca": "humano", "reino":["Vermênia", "Estátira", "Divinópolis", "Tandra", "Gashbad"],},
+    {"raca": "ciclope", "reino":["Glúkdra", "Mashshag", "Agar'roch", "Ugarg", "Warkatopia"],},
     {"raca": "elfo", "reino":["Alqualondë", "Avallonè", "Brithombar", "Eldamar", "Ithilien"],}
 ]
 var numRand = Math.floor(Math.random() * 3)
@@ -22,6 +22,11 @@ function saveName(){
           var racaEscolha = reinos[radios[indice].value].raca
           var reinoNasc = reinos[radios[indice].value].reino[numRand];}
         }
-    texto = ("Seu nome é "+nome+", um "+racaEscolha+" nascido e criado no reino de "+reinoNasc+". Você tem "+ouro+" de ouro e "+xp+" de XP")
-    document.getElementById("conteudo").innerHTML = texto
+    if (nome != "" && reinoNasc != undefined) {
+        texto = ("Seu nome é "+nome+", um "+racaEscolha+" nascido e criado no reino de "+reinoNasc+". Você tem "+ouro+" de ouro e "+xp+" de XP")
+        document.getElementById("conteudo").innerHTML = texto
+    }else {document.getElementById("msg").innerHTML = "Hey! Por favor preencha o campo que falta!"
+            function shakeThat(){document.getElementById("msg").style.animation = "shake 0.2s"}
+            shakeThat()
+           }
 }
